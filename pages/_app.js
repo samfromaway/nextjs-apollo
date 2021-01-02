@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../lib/apollo';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => {
+  const apolloClient = useApollo(pageProps.initialApolloState);
 
-export default MyApp
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
+};
+
+export default MyApp;
