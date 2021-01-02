@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import GET_PRODUCT_BY_ID from '../lib/queries/getProductById';
 import { initializeApollo } from '../lib/apollo';
@@ -18,20 +17,9 @@ export default function Home() {
   console.log(data);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <div>
-          <h1>Home</h1>
-          <h2>{data?.product[0].usp1}</h2>
-        </div>
-      </main>
-
-      <footer className={styles.footer}></footer>
+    <div>
+      <h1>Home</h1>
+      <h2>{data?.product[0].usp1}</h2>
     </div>
   );
 }
