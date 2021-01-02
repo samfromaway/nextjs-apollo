@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import GET_PRODUCT_BY_ID from '../lib/queries/getProductById';
 import { initializeApollo } from '../lib/apollo';
 
-export default function Home({ queryId }) {
+export default function Product({ queryId }) {
   const { data, loading, error } = useQuery(GET_PRODUCT_BY_ID, {
     variables: { code: queryId },
   });
