@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import { useQuery } from '@apollo/client';
 import GET_PRODUCT_BY_ID from '../lib/queries/getProductById';
 import { initializeApollo } from '../lib/apollo';
